@@ -1,13 +1,17 @@
 .leftdiv{
     background-color: black;
     min-height: 90vh;
+    min-width: 35vh;
 }
 .rightdiv{
     background-image: url("images/rightbg");
     min-height: 90vh;
+    min-width: 173.2vh;
 }
 .spotnav{
     padding:10px;
+    padding-right: 40px;
+    padding-left: 20px;
     display: flex;
     align-items: center;
 }
@@ -18,7 +22,6 @@
     font-family: Arial, Helvetica, sans-serif;
     padding-left:10px;
     font-size: 20px;
-    font-weight: bold;
     color: white;
 }
 .container{
@@ -30,9 +33,21 @@
     padding: 10px;
 }
 .songs{
-    float: bottom;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    bottom: 0;
     background-color: black;
     margin-left: -8px;
+    min-width: 215vh;
+}
+.songsbtn{
+    margin: auto;
+}
+.songtxt{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
 }
 .message{
     font-family: Arial, Helvetica, sans-serif;
@@ -40,6 +55,7 @@
     font-size: 24px;
     color: white;
     padding: 10px;
+    padding-top: 40px;
 }
 .shorts{
     display: flex;
@@ -48,17 +64,47 @@
 .shortsbtn{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
+    background-color: rgba(69, 69, 69, 0.897);
+    padding: 10px;
+    margin: 10px;
+    align-items: center;
+    border-radius: 5px;
+}
+.shortsbtntext{
     color: white;
     font-weight: bold;
     font-size: 20px;
-    background-color: grey;
     padding: 10px;
-    align-items: center;
+    margin: 10px;
 }
 .message2{
-    font-size: 10;
     color: white;
-    font-size: 18px;
+    font-size: 24px;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.cards-container{
+    display: flex;
+}
+.playedcards{
+    vertical-align: middle;
+    background-color: rgb(43, 43, 43);
+    max-width: 210px;
+    border-radius: 5px;
+    margin: 20px;
+}
+.playedtext{
+    color: white;   
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    padding-left: 20px;
+}
+.playedtextdes{
+    color: rgb(77, 73, 73);
+    font-size: 14px;   
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    padding-left: 20px;
 }
