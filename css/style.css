@@ -43,11 +43,21 @@
 }
 .songsbtn{
     margin: auto;
+    justify-content: center;
+}
+.songsbtnplay{
+    padding-left: 75vh;
 }
 .songtxt{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
+}
+#SongBar{
+    width: 80vw;
+}
+.icon{
+    cursor: pointer;
 }
 .message{
     font-family: Arial, Helvetica, sans-serif;
