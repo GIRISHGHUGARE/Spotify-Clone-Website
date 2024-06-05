@@ -1,20 +1,34 @@
-console.log("Welcome to Spotify");
-
-//Initialize the Variables
+//Initializing the variables
 let songIndex = 0;
 let playbtn = document.getElementById('playbtn');
 let pausebtn = document.getElementById('pausebtn');
 let forward = document.getElementById('forward');
 let back = document.getElementById('back');
+let GreetMsg = document.getElementById('GreetMsg');
+var d = new Date();
+var hrs = d.getHours();
 let audioElement = new Audio('songs/Radha Rani.mp3');
 
+
 let songs = [
-    {songsName: "Radha Rani", filePath: "songs/Radha Rani.mp3"},
-    {songsName: "Gangster Paradise", filePath: "songs/Gangster Paradise.mp3"},
-    {songsName: "Song1", filePath: "songs/Song1.mp3"}
+    {songsName: "Radha Rani", songImage:"images/RadhaRaniRecent.png", filePath: "songs/Radha Rani.mp3"},
+    {songsName: "Gangster P", songImage:"images/Gangster.png", filePath: "songs/Gangster Paradise.mp3"},
+    {songsName: "Brothers A", songImage:"images/Brothers.png", filePath: "songs/Brothers Anthem.mp3"}
 ]
 
-// Handle play/pause click
+document.addEventListener('DOMContentLoaded',()=>{
+    if (hrs>=12 && hrs<18) {
+        GreetMsg.innerText = "Good Afternoon Girish !";
+    }
+    else if(hrs>=18 && hrs<0){
+        GreetMsg.innerText = "Good Evening Girish !";
+    }
+    else{
+        GreetMsg.innerText = "Good Morning Girish !";
+    }
+})
+   
+//Play/Pause click
 playbtn.addEventListener('click', ()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
         audioElement.play();
@@ -38,6 +52,8 @@ forward.addEventListener('click', ()=>{
     audioElement.src = songs[songIndex].filePath;
     audioElement.play();
     playbtn.src = 'images/pause.png';
+    SongImage.src = songs[songIndex].songImage;
+    SongText.innerText = songs[songIndex].songsName;
 })
 
 back.addEventListener('click', ()=>{
@@ -52,9 +68,11 @@ back.addEventListener('click', ()=>{
     audioElement.src = songs[songIndex].filePath;
     audioElement.play();
     playbtn.src = 'images/pause.png';
+    SongImage.src = songs[songIndex].songImage;
+    SongText.innerText = songs[songIndex].songsName;
 })
 
-// Listen to Events
+// Events Listener
 audioElement.addEventListener('timeupdate', ()=>{ 
     // Update Seekbar
     progress = parseInt((audioElement.currentTime/audioElement.duration)* 100); 
@@ -63,38 +81,5 @@ audioElement.addEventListener('timeupdate', ()=>{
 
 myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = SongBar.value * audioElement.duration/100;
-})
-
-//Previous Next
-
-
-// let songItems = Array.from(document.getElementsByClassName('songItem'));
-
-// songItems.forEach((element, i)=>{ 
-//     element.getElementsByTagName("img")[0].src = songs[i].coverPath; 
-//     element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
-// })
-
-// const makeAllPlays = ()=>{
-//     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-//         element.classList.remove('fa-pause-circle');
-//         element.classList.add('fa-play-circle');
-//     })
-// }
-
-// Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-//     element.addEventListener('click', (e)=>{ 
-//         makeAllPlays();
-//         songIndex = parseInt(e.target.id);
-//         e.target.classList.remove('fa-play-circle');
-//         e.target.classList.add('fa-pause-circle');
-//         audioElement.src = `songs/${songIndex+1}.mp3`;
-//         masterSongName.innerText = songs[songIndex].songName;
-//         audioElement.currentTime = 0;
-//         audioElement.play();
-//         gif.style.opacity = 1;
-//         masterPlay.classList.remove('fa-play-circle');
-//         masterPlay.classList.add('fa-pause-circle');
-//     })
-// })
+}) 
 

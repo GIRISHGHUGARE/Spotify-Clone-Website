@@ -15,8 +15,13 @@
     display: flex;
     align-items: center;
 }
+.spotnav:hover{
+    background-color: grey;
+    cursor: pointer;
+}
 .spotnav:active{
     background-color: grey;
+    cursor: pointer;
 }
 .spotnavtext{
     font-family: Arial, Helvetica, sans-serif;
@@ -53,9 +58,6 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
 }
-#SongBar{
-    width: 80vw;
-}
 .icon{
     cursor: pointer;
 }
@@ -79,6 +81,10 @@
     margin: 10px;
     align-items: center;
     border-radius: 5px;
+}
+.shortsbtn:hover{
+    background-color: grey;
+    cursor: pointer;
 }
 .shortsbtntext{
     color: white;
@@ -104,6 +110,13 @@
     border-radius: 5px;
     margin: 20px;
 }
+.playedcards.img{
+    height: 100px;
+}
+.playedcards:hover{
+    background-color: grey;
+    cursor: pointer;
+}
 .playedtext{
     color: white;   
     font-weight: bold;
@@ -117,4 +130,33 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 5px;
     padding-left: 20px;
+}
+#SongImage{
+    width: 70px;
+    height: 70px;
+}
+#SongBar{ 
+    width: 80vw;
+    margin-top: 1.5rem;
+    height: 2.5px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    background: #2c2929;
+}
+
+input:hover{
+    cursor: pointer;
 }
